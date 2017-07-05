@@ -46,6 +46,7 @@ export function para<F, A>(transformer: RAlgebra<F, A>,
 
   return transformed;
 }
+export const paramorphism = para;
 
 function id<A>(a: A) : A {
   return a;
@@ -113,6 +114,7 @@ export function gApo<F, A, B>(expand: Coalgebra<F, B>,
   const transformed : HKT<F, Fix<F>> = functor.map(fanIn, expanded);
   return new In(transformed);
 };
+export const generalizedApomorphism = gApo;
 
 export type NaturalTransformation<F, A> = (HKT<F, A>) => HKT<F, A>;
 
@@ -131,19 +133,18 @@ export function prepro<F, A>(naturalTransformer: NaturalTransformation<F, A>,
 }
 export const prepromorphism = prepro;
 
-export function postPro<F, A>(naturalTransformer: NaturalTransformation<F, A>,
+export function postpro<F, A>(naturalTransformer: NaturalTransformation<F, A>,
                               expand: Coalgebra<F, A>,
                               seed: A,
                               functor: Functor<F>) : Fix<F> {
   const expanded : HKT<F, A> = expand(seed),
         naturalTransformed : HKT<F, A> = naturalTransformer(expanded),
         childrenMapped = functor.map(
-          x => postPro(naturalTransformer, expand, x, functor),
+          x => postpro(naturalTransformer, expand, x, functor),
           naturalTransformed),
         rewrapped = new In(childrenMapped);
 
   return rewrapped;
 }
-export const postpromorphism = postPro;
-
+export const postpromorphism = postpro;
 
