@@ -3,8 +3,8 @@
 
 import type { Functor } from "flow-static-land/lib/Functor";
 import type { HKT } from "flow-static-land/lib/HKT";
-import type { Fix } from "./fix";
-import { In } from "./fix";
+import type { Fix } from "../../src/Fix";
+import { In } from "../../src/Fix";
 
 export type ExprI<A>
   = Plus<A>

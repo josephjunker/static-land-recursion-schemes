@@ -4,7 +4,8 @@
   "description": "Recursion schemes compatible with flow-static-land",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rimraf lib && babel src/ -d lib/ && flow-copy-source -v src lib"
+    "build": "rimraf lib && babel src/ -d lib/ && flow-copy-source -v src lib",
+    "test": "mocha --compilers js:babel-register"
   },
   "keywords": [
     "staticland",
@@ -21,8 +22,10 @@
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
+    "chai": "^4.0.2",
     "flow-bin": "^0.46.0",
     "flow-copy-source": "^1.2.0",
+    "mocha": "^3.4.2",
     "rimraf": "^2.6.1"
   }
 }
