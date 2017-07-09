@@ -13,12 +13,7 @@ This provides a small core set of recursion schemes. Functions for composing sch
 
 ## Provided schemes
 
-Import using:
-```
-import * as schemes from "static-land-recursion-schemes/lib/schemes";
-```
-
-Exports:
+Exports from "static-land-recursion-schemes/lib/schemes":
 
 ```
 type Algebra<F, A> = HKT<F, A> => A;
@@ -53,6 +48,22 @@ const prepromorphism = prepro;
 
 function postpro<F, A>(NaturalTransformation<F, A>, Coalgebra<F, A>, A, Functor<F>) : Fix<F>
 const postpromorphism = postpro;
+```
+
+Exports from "static-land-recursion-schemes/lib/Fix":
+
+```
+type Fix<F> = In<F>
+
+class In<F> {
+  term: HKT<F, Fix<F>>;
+  constructor(term: HKT<F, Fix<F>>) {
+    this.term = term;
+  };
+};
+
+function out<F>(term: Fix<F>) : HKT<F, Fix<F>>
+
 ```
 
 ## License
