@@ -1,6 +1,6 @@
 {
   "name": "static-land-recursion-schemes",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Recursion schemes compatible with flow-static-land",
   "main": "lib/index.js",
   "scripts": {
