@@ -1,6 +1,7 @@
 .git
 node_modules
 src
+test
 tests
 .babelrc
 .flowconfig
