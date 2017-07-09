@@ -9,7 +9,7 @@ npm install static-land-recursion-schemes
 ```
 
 ## Overview
-This provides a small core set of recursion schemes. Functions for composing schemes are not provided. More documentation on usage will be added soon.
+This provides a small core set of recursion schemes. Functions for composing schemes are not provided. Documentation is in-process, and will be written as a set of guides [here](https://medium.com/@JosephJnk/recursion-schemes-in-javascript-and-flow-with-static-land-recursision-schemes-97cf10599fb7).
 
 ## Provided schemes
 
